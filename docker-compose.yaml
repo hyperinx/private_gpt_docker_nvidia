@@ -3,9 +3,7 @@ version: '3.5'
 services:
   privategpt:
     build: .
-    image: muka/privategpt
-    env_file:
-      - .env
+    image: skynet
     volumes:
       - ./data/db:/app/db
       - ./data/models:/app/models

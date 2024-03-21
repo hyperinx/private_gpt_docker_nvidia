@@ -1,0 +1,26 @@
+server:
+  env_name: ${APP_ENV:local}
+
+llm:
+  mode: llamacpp
+  # Should be matching the selected model
+  max_new_tokens: 512
+  context_window: 3900
+  tokenizer: AdaptLLM/medicine-chat
+
+llamacpp:
+  prompt_style: "llama2"
+  llm_hf_repo_id: TheBloke/medicine-chat-GGUF
+  llm_hf_model_file: medicine-chat.Q5_K_M.gguf
+
+embedding:
+  mode: huggingface
+
+huggingface:
+  embedding_hf_model_name: intfloat/multilingual-e5-large
+
+vectorstore:
+  database: qdrant
+
+qdrant:
+  path: local_data/private_gpt/qdrant
